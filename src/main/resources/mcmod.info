@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ByteChecker",
+  "name": "ByteChecker",
+  "description": "This mod simply version checks the ByteSize modpack.",
+  "version": "1.0",
+  "mcversion": "${mcversion}",
+  "url": "nodecraft.com",
+  "updateUrl": "",
+  "authorList": ["NodeCraft Zach"],
+  "credits": "The Forge, FML, and ATLauncher Teams",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
