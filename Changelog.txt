@@ -2,3 +2,8 @@ Dev-0.0.1
 
 -Start addition of Operator notification message
 -Console notification message complete
+
+Dev-0.0.2
+
+-Attempted to finish Operator Join Notification message
+-Added and finished commands to manually check versions and to toggle automatic notifications

@@ -1,13 +1,13 @@
 [
 {
-  "modid": "ByteChecker",
-  "name": "ByteChecker",
-  "description": "This mod simply version checks the ByteSize modpack.",
-  "version": "1.0",
+  "modid": "ATChecker",
+  "name": "ATChecker",
+  "description": "A server version checker for ATLauncher modpacks",
+  "version": "0.0.1",
   "mcversion": "${mcversion}",
   "url": "nodecraft.com",
   "updateUrl": "",
-  "authorList": ["NodeCraft Zach"],
+  "authorList": ["Zach","Jon","James"],
   "credits": "The Forge, FML, and ATLauncher Teams",
   "logoFile": "",
   "screenshots": [],

@@ -18,8 +18,8 @@ buildscript {
 apply plugin: 'forge'
 
 version = "0.0.1"
-group= "com.orthus.ByteChecker" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ByteChecker"
+group= "com.orthus.ATChecker" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "ATChecker"
 
 minecraft {
     version = "1.7.10-10.13.2.1286"

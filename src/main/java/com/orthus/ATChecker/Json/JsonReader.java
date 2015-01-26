@@ -1,4 +1,4 @@
-package com.orthus.ATChecker;
+package com.orthus.ATChecker.Json;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -7,6 +7,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.orthus.ATChecker.*;
+
+import cpw.mods.fml.common.FMLLog;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -54,8 +56,7 @@ public class JsonReader {
 			}
 			else
 			{
-				System.out.println("Json check failed.");
-				System.out.println(JsonCheck);
+				LatestVersion = "null";
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
