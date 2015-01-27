@@ -16,7 +16,7 @@ public class ATLEventHandler {
    {
    	//OpCheck        
    	GameProfile player = event.player.getGameProfile();
-   	Boolean IsOP = MinecraftServer.getServer().getConfigurationManager().func_152607_e(player);
+   	Boolean IsOP = MinecraftServer.getServer().getConfigurationManager().func_152596_g(player);
    	if (IsOP == true)
    	{
            if (ATLChecker.CheckResult != true)
