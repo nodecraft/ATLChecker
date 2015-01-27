@@ -9,7 +9,7 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
-public class ATEventHandler {
+public class ATLEventHandler {
 	
     @SubscribeEvent
     public void playerjoin(PlayerLoggedInEvent event)
@@ -19,15 +19,15 @@ public class ATEventHandler {
    	Boolean IsOP = MinecraftServer.getServer().getConfigurationManager().func_152607_e(player);
    	if (IsOP == true)
    	{
-           if (ATChecker.CheckResult != true)
+           if (ATLChecker.CheckResult != true)
            {
-        	   if (ATChecker.LatestVersion != "null")
+        	   if (ATLChecker.LatestVersion != "null")
         	   {
-           			event.player.addChatMessage(new ChatComponentText(ATChecker.OpMessage));
+           			event.player.addChatMessage(new ChatComponentText(ATLChecker.OpMessage));
         	   }
         	   else 
         	   {
-       				event.player.addChatMessage(new ChatComponentText(ATChecker.FailureMessage));
+       				event.player.addChatMessage(new ChatComponentText(ATLChecker.FailureMessage));
         	   }
           }
            else{

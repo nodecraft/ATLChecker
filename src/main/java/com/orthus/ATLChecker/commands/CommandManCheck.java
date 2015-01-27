@@ -3,7 +3,7 @@ package com.orthus.ATChecker.commands;
 import java.lang.reflect.Array;
 import java.util.List;
 
-import com.orthus.ATChecker.ATChecker;
+import com.orthus.ATChecker.ATLChecker;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
@@ -45,9 +45,9 @@ public class CommandManCheck implements ICommand
     public void processCommand(ICommandSender sender, String[] argString)
     { 
             
-    	if (ATChecker.CheckResult != true)
+    	if (ATLChecker.CheckResult != true)
     	{
-			sender.addChatMessage(new ChatComponentText(ATChecker.OpMessage));
+			sender.addChatMessage(new ChatComponentText(ATLChecker.OpMessage));
     	}
     	else{
 			sender.addChatMessage(new ChatComponentText("Pack is up to date!"));

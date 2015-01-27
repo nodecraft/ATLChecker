@@ -1,8 +1,11 @@
 package com.orthus.ATChecker.commands;
 
+import java.util.List;
+import net.minecraft.command.ICommandSender;
+import net.minecraft.util.ChatComponentText;
+import com.orthus.ATChecker.ATLChecker;
 import java.lang.reflect.Array;
 import java.util.List;
-import com.orthus.ATChecker.ATChecker;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -17,10 +20,9 @@ import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
-	public class CommandConsoleMessageToggle implements ICommand
-	{ 
-	 
-	    @Override 
+
+public class CommandOperatorMessageToggle implements ICommand {
+	 @Override 
 	    public int compareTo(Object o)
 	    { 
 	        return 0; 
@@ -29,25 +31,25 @@ import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 	    @Override 
 	    public String getCommandName() 
 	    { 
-	        return "atct"; 
+	        return "atot"; 
 	    } 
 
 	    @Override         
 	    public String getCommandUsage(ICommandSender var1) 
 	    { 
-	        return "/atct <toggles console notification for ATChecker>"; 
+	        return "/atot <toggles operator join notificaton for ATLChecker>"; 
 	    } 
 
 	    @Override 
 	    public void processCommand(ICommandSender sender, String[] argString)
 	    { 
-	    	if (ATChecker.ConsoleOut == true){
-	    		ATChecker.ConsoleOut = false;
-	    		sender.addChatMessage(new ChatComponentText("Console message disabled"));
+	    	if (ATLChecker.OperatorOut == true){
+	    		ATLChecker.OperatorOut = false;
+	    		sender.addChatMessage(new ChatComponentText("Operator message disabled"));
 	    	}
 	    	else{
-	    		ATChecker.ConsoleOut = false;
-	    		sender.addChatMessage(new ChatComponentText("Console message enabled"));;
+	    		ATLChecker.OperatorOut = false;
+	    		sender.addChatMessage(new ChatComponentText("Operator message enabled"));;
 	    	}
 	    } 
 

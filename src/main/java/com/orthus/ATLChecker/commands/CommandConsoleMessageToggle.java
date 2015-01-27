@@ -1,11 +1,8 @@
 package com.orthus.ATChecker.commands;
 
-import java.util.List;
-import net.minecraft.command.ICommandSender;
-import net.minecraft.util.ChatComponentText;
-import com.orthus.ATChecker.ATChecker;
 import java.lang.reflect.Array;
 import java.util.List;
+import com.orthus.ATChecker.ATLChecker;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -20,9 +17,10 @@ import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
-
-public class CommandOperatorMessageToggle implements ICommand {
-	 @Override 
+	public class CommandConsoleMessageToggle implements ICommand
+	{ 
+	 
+	    @Override 
 	    public int compareTo(Object o)
 	    { 
 	        return 0; 
@@ -31,25 +29,25 @@ public class CommandOperatorMessageToggle implements ICommand {
 	    @Override 
 	    public String getCommandName() 
 	    { 
-	        return "atot"; 
+	        return "atct"; 
 	    } 
 
 	    @Override         
 	    public String getCommandUsage(ICommandSender var1) 
 	    { 
-	        return "/atot <toggles operator join notificaton for ATChecker>"; 
+	        return "/atct <toggles console notification for ATLChecker>"; 
 	    } 
 
 	    @Override 
 	    public void processCommand(ICommandSender sender, String[] argString)
 	    { 
-	    	if (ATChecker.OperatorOut == true){
-	    		ATChecker.OperatorOut = false;
-	    		sender.addChatMessage(new ChatComponentText("Operator message disabled"));
+	    	if (ATLChecker.ConsoleOut == true){
+	    		ATLChecker.ConsoleOut = false;
+	    		sender.addChatMessage(new ChatComponentText("Console message disabled"));
 	    	}
 	    	else{
-	    		ATChecker.OperatorOut = false;
-	    		sender.addChatMessage(new ChatComponentText("Operator message enabled"));;
+	    		ATLChecker.ConsoleOut = false;
+	    		sender.addChatMessage(new ChatComponentText("Console message enabled"));;
 	    	}
 	    } 
 

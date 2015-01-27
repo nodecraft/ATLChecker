@@ -28,8 +28,8 @@ import com.orthus.ATChecker.commands.CommandConsoleMessageToggle;
 import com.orthus.ATChecker.commands.CommandManCheck;
 import com.orthus.ATChecker.commands.CommandOperatorMessageToggle;
 
-@Mod(modid = "ATChecker", version = "1.0.0-dev", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
-public class ATChecker
+@Mod(modid = "ATLChecker", version = "1.0.0-dev", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
+public class ATLChecker
 {
 	public static String LocalVersion;
 	public static String PackName;
@@ -59,7 +59,7 @@ public class ATChecker
     	OperatorOut = config.get(config.CATEGORY_GENERAL, "Operator Output", true).getBoolean();
     	config.save();
     	peformCheck();
-    	FMLCommonHandler.instance().bus().register(new ATEventHandler());
+    	FMLCommonHandler.instance().bus().register(new ATLEventHandler());
     }
 
     @Mod.EventHandler
