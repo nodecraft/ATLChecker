@@ -37,7 +37,7 @@ public class CommandOperatorMessageToggle implements ICommand {
 	    @Override         
 	    public String getCommandUsage(ICommandSender var1) 
 	    { 
-	        return "atot"; 
+	        return "/atot <toggles operator join notificaton for ATChecker>"; 
 	    } 
 
 	    @Override 

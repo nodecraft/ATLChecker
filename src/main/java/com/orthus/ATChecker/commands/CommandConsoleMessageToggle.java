@@ -35,7 +35,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 	    @Override         
 	    public String getCommandUsage(ICommandSender var1) 
 	    { 
-	        return "atct"; 
+	        return "/atct <toggles console notification for ATChecker>"; 
 	    } 
 
 	    @Override 

@@ -7,3 +7,8 @@ Dev-0.0.2
 
 -Attempted to finish Operator Join Notification message
 -Added and finished commands to manually check versions and to toggle automatic notifications
+
+Dev-1.0.0
+
+-Operator join notification message works
+-Cleaned up debug "system.out.printlns"

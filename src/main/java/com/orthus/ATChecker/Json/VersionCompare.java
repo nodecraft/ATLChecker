@@ -8,7 +8,6 @@ public class VersionCompare {
 
 	public static Boolean main(String str1, String str2 )
 	{
-		System.out.println("versionCompare running");
 		Test = (str1.equals(str2));
 		return Test;
 	}

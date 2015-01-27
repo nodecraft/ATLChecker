@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -27,7 +28,7 @@ import com.orthus.ATChecker.commands.CommandConsoleMessageToggle;
 import com.orthus.ATChecker.commands.CommandManCheck;
 import com.orthus.ATChecker.commands.CommandOperatorMessageToggle;
 
-@Mod(modid = "ATChecker", version = "0.0.1", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
+@Mod(modid = "ATChecker", version = "1.0.0-dev", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
 public class ATChecker
 {
 	public static String LocalVersion;
@@ -53,12 +54,12 @@ public class ATChecker
     	LocalVersion = config.get(config.CATEGORY_GENERAL  ,"Current Version", "0.0.3" ).getString();
     	OpMessage = config.get(config.CATEGORY_GENERAL  ,"Operator Message", "Server out of date." ).getString();
     	ConsoleMessage = config.get(config.CATEGORY_GENERAL  ,"Console Message", "Server out of date." ).getString();
-    	FailureMessage = config.get(config.CATEGORY_GENERAL  ,"API Failure Message", "Invalid Json" ).getString();
+    	FailureMessage = config.get(config.CATEGORY_GENERAL  ,"API Failure Message", "Version returned as " + LatestVersion).getString();
     	ConsoleOut = config.get(config.CATEGORY_GENERAL, "Console Output", true).getBoolean();
     	OperatorOut = config.get(config.CATEGORY_GENERAL, "Operator Output", true).getBoolean();
     	config.save();
     	peformCheck();
-        
+    	FMLCommonHandler.instance().bus().register(new ATEventHandler());
     }
 
     @Mod.EventHandler
@@ -76,34 +77,6 @@ public class ATChecker
     public void postInit(FMLServerStartedEvent event){
     	StartOutput();
 	}
-    @Mod.EventHandler
-     //Too be added for chat message to Operator on server join
-     public void playerjoin(PlayerLoggedInEvent event)
-    {
-    	//OpCheck();        
-    	System.out.println(event.player.getDisplayName() + " logged In!");
-    	GameProfile player = event.player.getGameProfile();
-    	Boolean IsOP = MinecraftServer.getServer().getConfigurationManager().func_152607_e(player);
-    	if (IsOP == true)
-    	{
-            if (CheckResult == true)
-            {
-            	if (OperatorOut == true)
-            	{
-        		// outputs [FML] ConsoleMessage
-            	    if (LatestVersion != "null")
-        			{
-            			event.player.addChatMessage(new ChatComponentText(OpMessage));
-            			FMLLog.info(String.format(ConsoleMessage));
-        			}
-        			else 
-        			{
-        				event.player.addChatMessage(new ChatComponentText(FailureMessage));
-        			}
-        		}
-        	}
-    	}
-    }
     
 
     // Custom Methods/functions

@@ -38,7 +38,7 @@ public class CommandManCheck implements ICommand
     @Override         
     public String getCommandUsage(ICommandSender var1) 
     { 
-        return "updatecheck"; 
+        return "/updatecheck <displays if modpack is up to date or custom out of date message>"; 
     } 
 
     @Override 

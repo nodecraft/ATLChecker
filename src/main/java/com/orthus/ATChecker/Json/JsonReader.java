@@ -24,7 +24,6 @@ public class JsonReader {
 	public static String main(String str1) {
 		String API = "https://api.atlauncher.com/v1/pack/"+ str1;
 		String LatestVersion = "null";
-		System.out.println("JsonReader running");
 		try 
 		{
 			
@@ -50,7 +49,6 @@ public class JsonReader {
 				JsonObject LatestObject = Ver.get(0).getAsJsonObject();
 				// Send latest version back
 				String GotVersion = LatestObject.get("version").getAsString();
-				System.out.println(GotVersion);
 				LatestVersion = GotVersion;
 				}
 			}
