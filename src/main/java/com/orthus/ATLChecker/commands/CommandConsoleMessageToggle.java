@@ -17,6 +17,7 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
@@ -52,10 +53,12 @@ import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 	    	if (ATLChecker.ConsoleOut == true){
 	    		ATLChecker.ConsoleOut = false;
 	    		sender.addChatMessage(new ChatComponentText("Console message disabled"));
+				FMLLog.info(String.format(sender.getCommandSenderName() + " has disabled console notifications for ATLChecker"));
 	    	}
 	    	else{
 	    		ATLChecker.ConsoleOut = false;
-	    		sender.addChatMessage(new ChatComponentText("Console message enabled"));;
+	    		sender.addChatMessage(new ChatComponentText("Console message enabled"));
+				FMLLog.info(String.format(sender.getCommandSenderName() + " has enabled console notifications for ATLChecker"));
 	    	}
 	    } 
 

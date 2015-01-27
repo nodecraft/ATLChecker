@@ -23,7 +23,7 @@ public class ATLEventHandler {
            {
         	   if (ATLChecker.LatestVersion != "null")
         	   {
-           			event.player.addChatMessage(new ChatComponentText(ATLChecker.OpMessage));
+           			event.player.addChatMessage(new ChatComponentText(String.format(ATLChecker.OpMessage, ATLChecker.LocalVersion, ATLChecker.LatestVersion)));
         	   }
         	   else 
         	   {

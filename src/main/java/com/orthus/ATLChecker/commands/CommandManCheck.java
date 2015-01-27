@@ -46,7 +46,7 @@ public class CommandManCheck implements ICommand
     @Override         
     public String getCommandUsage(ICommandSender var1) 
     { 
-        return "/updatecheck <displays if modpack is up to date or custom out of date message>"; 
+        return "/updatecheck <displays operator notification>"; 
     } 
 
     @Override 
@@ -55,10 +55,12 @@ public class CommandManCheck implements ICommand
             
     	if (ATLChecker.CheckResult != true)
     	{
-			sender.addChatMessage(new ChatComponentText(ATLChecker.OpMessage));
+			sender.addChatMessage(new ChatComponentText(String.format(ATLChecker.OpMessage, ATLChecker.LocalVersion, ATLChecker.LatestVersion)));
+			FMLLog.info(String.format(ATLChecker.ConsoleMessage, ATLChecker.LocalVersion, ATLChecker.LatestVersion));
     	}
     	else{
-			sender.addChatMessage(new ChatComponentText("Pack is up to date!"));
+			sender.addChatMessage(new ChatComponentText("Pack is up to date. " + ATLChecker.LatestVersion));
+			FMLLog.info(String.format("Pack is up to date. " + ATLChecker.LatestVersion));
     	}
     } 
 

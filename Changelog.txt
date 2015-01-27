@@ -12,3 +12,8 @@ Dev-1.0.0
 
 -Operator join notification message works
 -Cleaned up debug "system.out.printlns"
+
+Dev-1.0.1
+
+-Added format variables for current version and Latest Version. %1$s and %2$s respectively
+-Added help command("atlhelp") due to forge help being clustered

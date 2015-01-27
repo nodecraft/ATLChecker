@@ -22,6 +22,7 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
@@ -58,10 +59,12 @@ public class CommandOperatorMessageToggle implements ICommand {
 	    	if (ATLChecker.OperatorOut == true){
 	    		ATLChecker.OperatorOut = false;
 	    		sender.addChatMessage(new ChatComponentText("Operator message disabled"));
+				FMLLog.info(String.format(sender.getCommandSenderName() + " has disabled operator notifications for ATLChecker"));
 	    	}
 	    	else{
 	    		ATLChecker.OperatorOut = false;
-	    		sender.addChatMessage(new ChatComponentText("Operator message enabled"));;
+	    		sender.addChatMessage(new ChatComponentText("Operator message enabled"));
+				FMLLog.info(String.format(sender.getCommandSenderName() + " has enabled operator notifications for ATLChecker"));
 	    	}
 	    } 
 

@@ -107,7 +107,7 @@ public class ATLChecker
 			// outputs [FML] ConsoleMessage
     			if (LatestVersion != "null")
     			{
-        			FMLLog.info(String.format(ConsoleMessage));
+        			FMLLog.info(String.format(ConsoleMessage, LocalVersion, LatestVersion));
     			}
     			else 
     			{
