@@ -1,8 +1,11 @@
 package com.orthus.ATLChecker.commands;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+
 import com.orthus.ATLChecker.ATLChecker;
+
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -19,7 +22,12 @@ import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 	public class CommandConsoleMessageToggle implements ICommand
 	{ 
-	 
+		private List aliases;
+		  public CommandConsoleMessageToggle()
+		  {
+		    this.aliases = new ArrayList();
+		    this.aliases.add("atct");
+		  }
 	    @Override 
 	    public int compareTo(Object o)
 	    { 
@@ -60,20 +68,17 @@ import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 	    @Override  
 	    public List addTabCompletionOptions(ICommandSender var1, String[] var2) 
 	    { 
-	        // TODO Auto-generated method stub 
 	        return null; 
 	    } 
 
 	    @Override 
 	    public boolean isUsernameIndex(String[] var1, int var2) 
 	    { 
-	        // TODO Auto-generated method stub 
 	        return false;
 	    }
 
 		@Override
 		public List getCommandAliases() {
-			// TODO Auto-generated method stub
-			return null;
+		    return this.aliases;
 		} 
 }
