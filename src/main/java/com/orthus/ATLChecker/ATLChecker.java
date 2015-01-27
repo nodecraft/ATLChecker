@@ -1,4 +1,4 @@
-package com.orthus.ATChecker;
+package com.orthus.ATLChecker;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
@@ -21,12 +21,12 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 import com.mojang.authlib.GameProfile;
-import com.orthus.ATChecker.*;
-import com.orthus.ATChecker.Json.JsonReader;
-import com.orthus.ATChecker.Json.VersionCompare;
-import com.orthus.ATChecker.commands.CommandConsoleMessageToggle;
-import com.orthus.ATChecker.commands.CommandManCheck;
-import com.orthus.ATChecker.commands.CommandOperatorMessageToggle;
+import com.orthus.ATLChecker.*;
+import com.orthus.ATLChecker.Json.JsonReader;
+import com.orthus.ATLChecker.Json.VersionCompare;
+import com.orthus.ATLChecker.commands.CommandConsoleMessageToggle;
+import com.orthus.ATLChecker.commands.CommandManCheck;
+import com.orthus.ATLChecker.commands.CommandOperatorMessageToggle;
 
 @Mod(modid = "ATLChecker", version = "1.0.0-dev", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
 public class ATLChecker

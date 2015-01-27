@@ -1,5 +1,5 @@
-package com.orthus.ATChecker.Json;
-import com.orthus.ATChecker.ATLChecker;
+package com.orthus.ATLChecker.Json;
+import com.orthus.ATLChecker.ATLChecker;
 
 
 public class VersionCompare {

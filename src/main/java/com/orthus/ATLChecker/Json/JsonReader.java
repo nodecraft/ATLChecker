@@ -1,4 +1,4 @@
-package com.orthus.ATChecker.Json;
+package com.orthus.ATLChecker.Json;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -6,7 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.orthus.ATChecker.*;
+import com.orthus.ATLChecker.*;
 
 import cpw.mods.fml.common.FMLLog;
 

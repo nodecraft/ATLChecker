@@ -1,4 +1,4 @@
-package com.orthus.ATChecker;
+package com.orthus.ATLChecker;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;

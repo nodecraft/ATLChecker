@@ -1,9 +1,9 @@
-package com.orthus.ATChecker.commands;
+package com.orthus.ATLChecker.commands;
 
 import java.lang.reflect.Array;
 import java.util.List;
 
-import com.orthus.ATChecker.ATLChecker;
+import com.orthus.ATLChecker.ATLChecker;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
