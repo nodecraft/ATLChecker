@@ -28,7 +28,7 @@ import com.orthus.ATLChecker.commands.CommandConsoleMessageToggle;
 import com.orthus.ATLChecker.commands.CommandManCheck;
 import com.orthus.ATLChecker.commands.CommandOperatorMessageToggle;
 
-@Mod(modid = "ATLChecker", version = "1.0.0-dev", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
+@Mod(modid = "ATLChecker", version = "1.0.1-dev", acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
 public class ATLChecker
 {
 	public static String LocalVersion;

@@ -3,7 +3,7 @@
   "modid": "ATChecker",
   "name": "ATChecker",
   "description": "A server version checker for ATLauncher modpacks",
-  "version": "0.0.1",
+  "version": "1.0.1-dev",
   "mcversion": "${mcversion}",
   "url": "nodecraft.com",
   "updateUrl": "",
