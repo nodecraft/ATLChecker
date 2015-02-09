@@ -12,9 +12,15 @@ Installation & Setup
 Configuration
 -----
 `Pack` - A string which references the nice name of your pack. This will be the same string as found on the ATLauncher website. For example *Bytesize* is the slug for www.atlauncher.com/pack/Bytesize
+
 `Current Version` - A string which references the current version of the pack.
+
 `Console Message` - Message to output in server console, when out of date.
+
 `Console Output` - Boolean to enable server console output, when out of date
+
 `Operator Message` - Message to send to server OP, when out of date
+
 `Operator Output` - Boolean to enable server OP message, when out of date
+
 `API Failure Message` - Message returned if ATLauncher API request fails
