@@ -1,67 +1,38 @@
 package com.orthus.ATLChecker.Json;
-import java.net.MalformedURLException;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.orthus.ATLChecker.*;
-
-import cpw.mods.fml.common.FMLLog;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.Iterator;
-
 
 public class JsonReader {
-	
-	@SuppressWarnings("finally")
-	public static String main(String str1) {
-		String API = "https://api.atlauncher.com/v1/pack/"+ str1;
-		String LatestVersion = "null";
-		try 
-		{
-			
-			// read the json file
+	public static String main(String packName) {
+		String API = "https://api.atlauncher.com/v1/pack/" + packName, LatestVersion = "null";
+
+		try {
 			URL oracle = new URL(API);
-			
-			Reader in = new InputStreamReader(oracle.openStream());
 			JsonParser jsonParser = new JsonParser();
-			JsonObject jsonObject = (JsonObject) jsonParser.parse(in);
-			// get a String from the JSON object
-			//JsonObject is a JsonElement but you can't use JsonElement as JsonObject, JsonObject is needed to get value data from a key.
+			JsonObject jsonObject = (JsonObject) jsonParser.parse(new InputStreamReader(oracle.openStream()));
 			JsonElement JsonCheck = jsonObject.get("error");
-			if (JsonCheck.isJsonObject() != true ){
-				boolean ErrorMessage = JsonCheck.getAsBoolean();
-				if (ErrorMessage == true){
-					System.out.println(ErrorMessage);
+
+			if (!JsonCheck.isJsonObject()) {
+				boolean err = JsonCheck.getAsBoolean();
+				if (err)
+					System.out.println(err);
+				else {
+					JsonObject structure = (JsonObject) jsonObject.get("data");
+					JsonObject LatestObject = ((JsonArray) structure.get("versions")).get(0).getAsJsonObject();
+					LatestVersion = LatestObject.get("version").getAsString();
 				}
-				else {			// handle a structure into the json object
-				JsonObject structure = (JsonObject) jsonObject.get("data");
-				// Select key for versions array
-				JsonArray Ver = (JsonArray) structure.get("versions");
-				// Select latest version to check version string, API v1 uses first object for latest version
-				JsonObject LatestObject = Ver.get(0).getAsJsonObject();
-				// Send latest version back
-				String GotVersion = LatestObject.get("version").getAsString();
-				LatestVersion = GotVersion;
-				}
-			}
-			else
-			{
-				LatestVersion = "null";
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally{
-			return LatestVersion;
 		}
-		
+
+		return LatestVersion;
 	}
 }
-
