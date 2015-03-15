@@ -1,13 +1,13 @@
 [
 {
-  "modid": "ATChecker",
-  "name": "ATChecker",
+  "modid": "ATLChecker",
+  "name": "ATLChecker",
   "description": "A server version checker for ATLauncher modpacks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mcversion": "${mcversion}",
   "url": "nodecraft.com",
   "updateUrl": "",
-  "authorList": ["Nodecraft"],
+  "authorList": ["Nodecraft, T145"],
   "credits": "The Forge, FML, and ATLauncher Teams",
   "logoFile": "",
   "screenshots": [],
