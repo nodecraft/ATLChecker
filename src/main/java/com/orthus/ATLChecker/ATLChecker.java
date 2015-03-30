@@ -23,7 +23,7 @@ public class ATLChecker {
 	public static String LocalVersion, PackName, OpMessage, ConsoleMessage, LatestVersion, FailureMessage;
 	public static boolean ConsoleOut, OperatorOut, CheckResult, OpStatus;
 
-	public static final String modid = "ATLChecker", version = "1.0.0";
+	public static final String modid = "ATLChecker", version = "1.0.2";
 
 	public static Logger logger = LogManager.getLogger(modid);
 
@@ -34,7 +34,7 @@ public class ATLChecker {
 		config.load();
 
 		PackName = config.get(config.CATEGORY_GENERAL, "Pack", "Default").getString();
-		LocalVersion = config.get(config.CATEGORY_GENERAL, "Current Version", "0.0.3").getString();
+		LocalVersion = config.get(config.CATEGORY_GENERAL, "Current Version", "0.0.0").getString();
 		OpMessage = config.get(config.CATEGORY_GENERAL, "Operator Message", "Server out of date.").getString();
 		ConsoleMessage = config.get(config.CATEGORY_GENERAL, "Console Message", "Server out of date.").getString();
 		FailureMessage = config.get(config.CATEGORY_GENERAL, "API Failure Message", "Version returned as " + LatestVersion).getString();
@@ -42,7 +42,12 @@ public class ATLChecker {
 		OperatorOut = config.get(config.CATEGORY_GENERAL, "Operator Output", true).getBoolean();
 		config.save();
 
-		LatestVersion = JsonReader.main(PackName);
+		if (PackName != "Default") {
+			LatestVersion = JsonReader.main(PackName);
+		}
+		else {
+			LatestVersion = LocalVersion;
+		}
 		CheckResult = LatestVersion.equals(LocalVersion);
 
 		FMLCommonHandler.instance().bus().register(new ATLEventHandler());
@@ -57,10 +62,10 @@ public class ATLChecker {
 
 	@EventHandler
 	public void postInit(FMLServerStartedEvent event) {
-		if (!CheckResult && ConsoleOut)
-			if (LatestVersion != "null")
-				FMLLog.info(String.format(ConsoleMessage, LocalVersion, LatestVersion));
-			else
-				FMLLog.info(String.format(FailureMessage));
-	}
+            if (!CheckResult && ConsoleOut)
+			    if (LatestVersion != "null")
+				    FMLLog.info(String.format(ConsoleMessage, LocalVersion, LatestVersion));
+			    else
+				    FMLLog.info(String.format(FailureMessage));
+    }
 }
