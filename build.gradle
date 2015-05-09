@@ -65,8 +65,19 @@ minecraft {
     runDir = 'eclipse'
 }
 
+repositories {
+    maven {
+        name 'uno-releases'
+        url 'http://repo.uno.jamierocks.uk/releases'
+    }
+    maven {
+        name 'uno-snapshots'
+        url 'http://repo.uno.jamierocks.uk/snapshots'
+    }
+}
+
 dependencies {
-    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile 'uk.jamierocks.atlauncher:api:1.0-SNAPSHOT'
 }
 
 processResources {

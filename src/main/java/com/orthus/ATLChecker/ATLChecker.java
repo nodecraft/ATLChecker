@@ -5,7 +5,6 @@ import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.orthus.ATLChecker.Json.JsonReader;
 import com.orthus.ATLChecker.commands.CommandConsoleMessageToggle;
 import com.orthus.ATLChecker.commands.CommandManCheck;
 import com.orthus.ATLChecker.commands.CommandOperatorMessageToggle;
@@ -17,6 +16,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import uk.jamierocks.atlauncher.api.Pack;
 
 @Mod(modid = ATLChecker.modid, version = ATLChecker.version, acceptedMinecraftVersions = "*", acceptableRemoteVersions = "*")
 public class ATLChecker {
@@ -43,7 +43,7 @@ public class ATLChecker {
 		config.save();
 
 		if (PackName != "Default") {
-			LatestVersion = JsonReader.main(PackName);
+			LatestVersion = Pack.getPack(PackName).getData().getVersions()[0].getVersion();
 		}
 		else {
 			LatestVersion = LocalVersion;
